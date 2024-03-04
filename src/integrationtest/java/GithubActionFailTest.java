@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 public class GithubActionFailTest {
     @Test
-    void testSuccess(){
+    void testFail(){
         assert(false);
     }
 }
