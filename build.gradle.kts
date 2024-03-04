@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.org.eclipse.jgit.lib.ObjectChecker.type
+
 plugins {
     id("java")
 }
@@ -16,4 +18,14 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.register<Test>("integrationTest") {
+    group = "verification"
+    description = "Runs the integration tests."
+
+    useJUnitPlatform {
+        includeTags("IntegrationTest")
+        excludeTags("UnitTest")
+    }
 }
