@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class GithubActionFailTest {
     @Test
-    @Tag("integrationTest")
+    @Tag("IntegrationTest")
     void testFail(){
         assert(false);
     }
