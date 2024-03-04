@@ -21,7 +21,8 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5
 
-    - name: Run Test
+    # 통합 테스트
+    - name: Run Integration Test
       run: ./gradlew integrationTest
 
     - name: Build with Gradle Wrapper
@@ -32,3 +33,7 @@ jobs:
       with:
         name: Package
         path: build/libs
+
+    # docker image 빌드
+    - name: Build docker image
+      run: docker build -t <docker_hub_username>/<docker_image_name> .
