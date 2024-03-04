@@ -34,6 +34,10 @@ jobs:
         name: Package
         path: build/libs
 
+    # docker image 빌드(test)
+    - name: Build docker image
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/example .
+
     - name: Log in to Docker Hub
       uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
       with:
