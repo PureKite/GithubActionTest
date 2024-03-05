@@ -7,11 +7,6 @@ plugins {
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
-jacoco {
-    toolVersion = "0.8.11"
-    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
-}
-
 repositories {
     mavenCentral()
 }
@@ -38,7 +33,6 @@ jacocoTestReport {
 
 tasks.named('test') {
     useJUnitPlatform()
-    finalizedBy jacocoTestReport
 }
 
 tasks.register('integrationTest', Test) {
