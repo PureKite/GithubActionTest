@@ -31,6 +31,7 @@ sonar {
 
 jacocoTestReport {
     reports {
+        html.required = true
         xml.required = true
     }
 }
@@ -38,14 +39,6 @@ jacocoTestReport {
 tasks.named('test') {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
-}
-
-jacocoTestReport {
-    reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-    }
 }
 
 tasks.register('integrationTest', Test) {
