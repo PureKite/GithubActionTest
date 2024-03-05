@@ -21,7 +21,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-sonar {
+sonarqube {
     properties {
         property "sonar.projectKey", "PureKite_GithubActionTest"
         property "sonar.organization", "purekite"
