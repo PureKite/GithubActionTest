@@ -9,7 +9,6 @@ version = '1.0-SNAPSHOT'
 
 jacoco {
     toolVersion = "0.8.11"
-    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
 repositories {
@@ -26,6 +25,7 @@ sonar {
         property "sonar.projectKey", "PureKite_GithubActionTest"
         property "sonar.organization", "purekite"
         property "sonar.host.url", "https://sonarcloud.io"
+        property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/test/jacocoTestReport.xml'
     }
 }
 
