@@ -14,6 +14,7 @@ jobs:
           reporter: github-pr-review
           level: warning
           checkstyle_config: ./checkstyle/naver-checkstyle-rules.xml
+          suppressions-file: ./checkstyle/naver-checkstyle-suppressions.xml
 
   sonarcloud:
     runs-on: ubuntu-latest
