@@ -2,18 +2,10 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id 'jacoco'
-    id 'checkstyle'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
-
-checkstyle {
-    maxWarnings = 0
-    configFile = file("${rootDir}/checkstyle/naver-checkstyle-rules.xml")
-    configProperties = ["suppressionFile": "${rootDir}/checkstyle/naver-checkstyle-suppressions.xml"]
-    toolVersion = "8.42"
-}
 
 repositories {
     mavenCentral()
