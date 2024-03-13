@@ -13,8 +13,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           level: warning
-          checkstyle_config: ./checkstyle/naver-checkstyle-rules.xml
-          properties_file: ./checkstyle/suppressionFile.properties
+          checkstyle_config: ${rootDir}/checkstyle/naver-checkstyle-rules.xml
 
   sonarcloud:
     runs-on: ubuntu-latest
