@@ -4,21 +4,21 @@ on:
     branches: [ "main" ]
 
 jobs:
-  checkstyle:
+  Checkstyle:
     name: checkstyle
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: reviewdog/action-setup@v1
-        with:
-          reviewdog_version: latest
       - uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           checkstyle_config: ./checkstyle/naver-checkstyle-rules.xml
           checkstyle_version: "8.24"
+          level: warning
           properties_file: ./checkstyle/checkstyle.properties
+          filter_mode: diff_context
+          fail_on_error: true
 
   Sonarcloud:
     runs-on: ubuntu-latest
