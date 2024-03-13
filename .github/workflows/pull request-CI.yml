@@ -12,7 +12,7 @@ jobs:
       - uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-check
+          reporter: github-pr-review
           checkstyle_config: ./checkstyle/naver-checkstyle-rules.xml
           checkstyle_version: "8.24"
           properties_file: ./checkstyle/checkstyle.properties
