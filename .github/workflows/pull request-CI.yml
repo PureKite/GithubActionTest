@@ -15,6 +15,7 @@ jobs:
           reporter: github-pr-review
           checkstyle_config: ./checkstyle/naver-checkstyle-rules.xml
           checkstyle_version: "8.24"
+          properties_file: ./checkstyle/checkstyle.properties
 
   Sonarcloud:
     runs-on: ubuntu-latest
