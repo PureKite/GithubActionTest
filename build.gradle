@@ -2,10 +2,13 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id 'jacoco'
+    id 'checkstyle'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
@@ -22,7 +25,6 @@ sonar {
         property "sonar.organization", "purekite"
         property "sonar.host.url", "https://sonarcloud.io"
         property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/test/jacocoTestReport.xml'
-        property 'sonar.java.checkstyle.reportPaths', 'build/reports/checkstyle/main.xml'
     }
 }
 
@@ -32,9 +34,13 @@ jacocoTestReport {
     }
 }
 
+checkstyle {
+    configFile = file("./checkstyle/naver-checkstyle-rules.xml")
+    configProperties = ["suppressionFile": "./checkstyle/naver-checkstyle-suppressions.xml"]
+    toolVersion = "8.24"
+}
 
 tasks.named('test') {
-    useJUnitPlatform()
 }
 
 tasks.register('integrationTest', Test) {

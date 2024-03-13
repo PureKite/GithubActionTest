@@ -5,17 +5,17 @@ on:
 
 jobs:
   checkstyle:
+    name: checkstyle
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: dbelyaev/action-checkstyle@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: warning
-          checkstyle_config: ${rootDir}/checkstyle/naver-checkstyle-rules.xml
 
-  sonarcloud:
+  Sonarcloud:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
