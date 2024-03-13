@@ -1,6 +1,1 @@
 rootProject.name = "project"
-buildCache {
-    local {
-        enabled = true
-    }
-}
